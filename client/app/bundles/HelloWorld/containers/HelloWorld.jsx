@@ -21,6 +21,10 @@ class HelloWorld extends React.Component {
     // This allows us to immediately know we don't call $$helloWorldStore['someProperty'], but
     // instead use the Immutable.js `get` API for Immutable.Map
     $$helloWorldStore: PropTypes.instanceOf(Immutable.Map).isRequired,
+
+    location: PropTypes.shape({
+      state: PropTypes.object,
+    }).isRequired,
   };
 
   constructor(props, context) {
@@ -32,12 +36,13 @@ class HelloWorld extends React.Component {
     const actions = bindActionCreators(helloWorldActionCreators, dispatch);
     const { updateName } = actions;
     const name = $$helloWorldStore.get('name');
+    const locationState = this.props.location.state;
 
     // This uses the ES2015 spread operator to pass properties as it is more DRY
     // This is equivalent to:
     // <HelloWorldWidget $$helloWorldStore={$$helloWorldStore} actions={actions} />
     return (
-      <HelloWorldWidget {...{ updateName, name }} />
+      <HelloWorldWidget {...{ updateName, name, locationState }} />
     );
   }
 }

@@ -12,6 +12,7 @@ export default class HelloWorldWidget extends React.Component {
     // passing two properties: "data" and "actions".
     updateName: PropTypes.func.isRequired,
     name: PropTypes.string.isRequired,
+    locationState: PropTypes.object,
   };
 
   constructor(props, context) {
