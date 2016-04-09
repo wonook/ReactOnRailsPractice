@@ -3,12 +3,20 @@
 // A real world app will likely have many reducers and it helps to organize them in one file.
 // `https://github.com/shakacode/react_on_rails/tree/master/docs/additional_reading/generated_client_code.md`
 import helloWorldReducer from './helloWorldReducer';
+import todosReducer from './todosReducer';
+import visibilityFilterReducer from './visibilityFilterReducer'
 import { $$initialState as $$helloWorldState } from './helloWorldReducer';
+import { $$initialState as $$todoState } from './todosReducer';
+import { $$initialState as $$visibilityFilterState } from './visibilityFilterReducer';
 
 export default {
   $$helloWorldStore: helloWorldReducer,
+  $$todoStore: todosReducer,
+  $$visibilityFilterStore: visibilityFilterReducer,
 };
 
 export const initalStates = {
   $$helloWorldState,
+  $$todoState,
+  $$visibilityFilterState,
 };
