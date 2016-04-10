@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'hello_world#index'
-  get "hello_world", to: 'hello_world#index'
+  get "hello_world_app", to: 'hello_world#index'
+  get "todo_app", to: 'todo#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

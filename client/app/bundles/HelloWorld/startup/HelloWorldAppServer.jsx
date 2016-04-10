@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { match, RouterContext } from 'react-router';
 
-import createStore from '../store/helloWorldStore';
+import createStore from '../store/appStore';
 import routes from '../routes/routes';
 
 // See documentation for https://github.com/rackt/react-redux.

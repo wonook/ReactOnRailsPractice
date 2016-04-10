@@ -12,14 +12,20 @@ import { initialStates } from '../reducers';
 
 export default props => {
   // This is how we get initial props Rails into redux.
-  const { name } = props;
-  const { $$helloWorldState } = initialStates;
+  const { name, todos, filter } = props;
+  const { $$helloWorldState, $$todoState, $$visibilityState } = initialStates;
 
   // Redux expects to initialize the store using an Object, not an Immutable.Map
   const initialState = {
     $$helloWorldStore: $$helloWorldState.merge({
       name,
     }),
+    $$todoStore: $$todoState.merge({
+      todos,
+    }),
+    $$visibilityStore: $$visibilityState.merge({
+      filter,
+    })
   };
 
   const reducer = combineReducers({
