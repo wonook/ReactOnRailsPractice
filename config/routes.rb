@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resources :comments
   root 'hello_world#index'
-  get "hello_world", to: 'hello_world#index'
+  get "hello_world", to: 'hello_world#hello'
+  get "todo", to: 'hello_world#todo'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
